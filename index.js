@@ -1,9 +1,5 @@
-
+const stdin = process.openStdin();
 const regex = /(\d+:\d+)/gi;
-
-const test = '[8:30 - 5:30] asdasd asdfa sdf [3:30 - 4:30]';
-
-var stdin = process.openStdin();
 
 function readTime(input) {
 	console.log('---------------------');
@@ -15,8 +11,6 @@ function readTime(input) {
 
 		let date1 = new Date(Date.parse('1996-04-12T' + time1));
 		let date2 = new Date(Date.parse('1996-04-12T' + time2));
-
-		
 
 		var hours = (date2 - date1) / 36e5;
 
