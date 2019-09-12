@@ -39,7 +39,6 @@ function readTime(input) {
 	}
 
 	console.log('Total: ' + total);
-	rl.prompt();
 }
 
 rl.on('line', (cmd) => {
