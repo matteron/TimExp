@@ -23,7 +23,7 @@ function readTime(input) {
 
 	for(let i = 0; i < times.length; i += 2) {
 		var hours = 0;
-		var isLunch = lunchEntries.some(l => l === '[' + times[i] + ' - ' + times[i+1] + '] Lunch');
+		var isLunch = lunchEntries && lunchEntries.some(l => l === '[' + times[i] + ' - ' + times[i+1] + '] Lunch');
 		
 		let time1 = times[i].length < 5 ? '0' + times[i] : times[i];
 		let time2 = times[i+1].length < 5 ? '0' + times[i+1] : times[i+1];
