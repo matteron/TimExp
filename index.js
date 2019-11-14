@@ -11,16 +11,19 @@ const lunchEx = /(\[\d+:\d+ - \d+:\d+\] Lunch)/gi;
 
 function readTime(input) {
 	console.log('');
-	const times = input.toString().match(regex);
+	const convertedInput = input.toString();
+	const times = convertedInput.match(regex);
 	if (!times) {
 		return;
 	}
+
+	const lunchEntries = convertedInput.match(lunchEx);
 
 	var total = 0;
 
 	for(let i = 0; i < times.length; i += 2) {
 		var hours = 0;
-		var isLunch = !lunchEx.test('[' + times[i] + ' - ' + times[i+1] + '] Lunch');
+		var isLunch = lunchEntries.some(l => l === '[' + times[i] + ' - ' + times[i+1] + '] Lunch');
 		
 		let time1 = times[i].length < 5 ? '0' + times[i] : times[i];
 		let time2 = times[i+1].length < 5 ? '0' + times[i+1] : times[i+1];
